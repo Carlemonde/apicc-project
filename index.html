@@ -1,0 +1,399 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>APICC - Adapting Precision Irrigation to Climate Change</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Work+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Work+Sans:wght@100..900&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "primary-container": "#3e5c1b",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "on-secondary-container": "#005381",
+                    "primary-fixed": "#c9ef9c",
+                    "surface-variant": "#e1e3e4",
+                    "on-tertiary-fixed": "#121f00",
+                    "on-secondary-fixed": "#001d32",
+                    "error": "#ba1a1a",
+                    "surface": "#f8f9fa",
+                    "on-background": "#191c1d",
+                    "surface-container": "#edeeef",
+                    "surface-tint": "#486725",
+                    "secondary-fixed": "#cde5ff",
+                    "surface-dim": "#d9dadb",
+                    "outline": "#74796b",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-fixed-dim": "#aed283",
+                    "tertiary-fixed": "#baf55b",
+                    "on-surface-variant": "#44483c",
+                    "tertiary-fixed-dim": "#9fd840",
+                    "outline-variant": "#c4c8b8",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#0f2000",
+                    "secondary-fixed-dim": "#95ccff",
+                    "on-primary-container": "#afd384",
+                    "inverse-primary": "#aed283",
+                    "primary": "#284404",
+                    "surface-container-high": "#e7e8e9",
+                    "secondary-container": "#89c7ff",
+                    "on-tertiary-fixed-variant": "#344e00",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container-low": "#f3f4f5",
+                    "on-error": "#ffffff",
+                    "tertiary": "#2c4400",
+                    "on-secondary-fixed-variant": "#004a75",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#a1da43",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#191c1d",
+                    "secondary": "#166395",
+                    "background": "#f8f9fa",
+                    "tertiary-container": "#3e5d00",
+                    "on-primary-fixed-variant": "#324f0e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "margin-desktop": "64px",
+                    "stack-xl": "64px",
+                    "margin-mobile": "20px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Hanken Grotesk"],
+                    "caption": ["Work Sans"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-md": ["Work Sans"],
+                    "headline-display": ["Hanken Grotesk"],
+                    "body-lg": ["Work Sans"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "caption": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .organic-circuit-pattern {
+            background-color: transparent;
+            background-image:  radial-gradient(#44483c 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline z-50 flat no shadows">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto transition-all duration-200 ease-in-out">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim" href="#">APICC</a>
+<nav class="hidden md:flex gap-stack-lg items-center">
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-bold" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#project">Project</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#timeline">Timeline</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#publications">Publications</a>
+</nav>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter">
+<!-- Hero Section -->
+<section class="py-stack-xl grid grid-cols-1 md:grid-cols-12 gap-stack-lg items-center min-h-[70vh]">
+<div class="md:col-span-7 space-y-stack-md">
+
+<h1 class="font-headline-display text-headline-display text-primary leading-tight">
+                    APICC - Adapting Precision Irrigation to Climate Change
+                </h1>
+
+<div class="pt-stack-md flex gap-4">
+
+
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="absolute -inset-4 organic-circuit-pattern -z-10 rounded-full"></div>
+<div class="rounded-xl overflow-hidden shadow-sm border border-outline-variant transform md:rotate-1">
+<img alt="Traditional Olive Tree" class="w-full h-auto object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG4ueTfbT5G2iFs_S7LzKATc_lXlm6Jni-1oZPYq--tYb9ZWM2dlIz-GYNoKPi66xMbrSxL-ABiCxPIBr4T9x1b2AvBIEPHVRI1_u9IUbaPDEC124ZbjBC4dHf03yMGft79-JVMAKuMdbLhIFoaKx5Zt3FxWZ0kuayfG52ZaePLngmNjoFUqrME-B8dqYh_GysCLWKnF-yTlZgqbeHYNDmT9OpiEqNPrhv1v91zCXz7GDMoh6mwEOKqr3zMjPW8NLKsP9n_kDKJYYz">
+</div>
+</div>
+</section>
+<!-- Project Overview -->
+<section class="py-stack-xl space-y-stack-xl border-t border-outline-variant" id="project">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-stack-lg">
+<div class="md:col-span-4 space-y-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-primary">Project Overview</h2>
+<div class="space-y-stack-md">
+<!-- Stats Card -->
+<div class="p-stack-md border border-outline-variant rounded-lg bg-surface-container-low space-y-stack-sm">
+<div class="flex justify-between items-center border-b border-outline-variant pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">LOCATION</span>
+<span class="font-body-md text-on-surface">Portugal</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ORCHARD</span>
+<span class="font-body-md italic text-on-surface">Olea Europaea</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">PHASE</span>
+<span class="font-body-md text-on-surface">Implementation</span>
+</div>
+<div class="space-y-2 pt-2">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">PROGRESS</span>
+<span class="font-label-caps text-label-caps text-primary">60%</span>
+</div>
+<div class="w-full bg-surface-dim h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[60%] transition-all duration-1000 ease-out" style="width: 0%; background-color: rgb(62, 92, 27);"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-8">
+<article class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed space-y-stack-md">
+<p class=""><span style="font-family: Arial, sans-serif; font-size: 12pt;" class="">Efficient
+water use in agriculture is a major challenge under climate change, especially
+due to increasing water scarcity and irregular precipitation patterns.
+Improving irrigation accuracy requires better estimation of crop water needs
+and the use of real-time information to quickly adapt to changing environmental
+conditions. Our project is focused on contributing to irrigation technologies
+that can be easily transferred and adapted across regions, while accounting for
+different socio-economic contexts. These solutions should be low-cost, simple
+to reproduce, and easy to maintain.</span></p><p class="MsoNormal"><span lang="EN-US" style="font-size:
+12.0pt;line-height:107%;font-family:&quot;Arial&quot;,sans-serif;mso-ansi-language:EN-US"><o:p></o:p></span></p><p class=""></p>
+<p class=""><span lang="EN-US" style="font-size: 12pt; line-height: 107%; font-family: Arial, sans-serif;" class="">Digital tools have significantly improved irrigation,
+and commercial solutions already exist. However, high costs and limited
+technical support mean digital agriculture remains accessible only to a small
+group of farmers.&nbsp;</span><span lang="EN-US" style="font-size: 12pt; line-height: 107%; font-family: Arial, sans-serif;" class="">Introducing&nbsp;</span><span class="text-primary font-bold">SOFIS (Smart Orchard Fertigation System)</span><span lang="EN-US" style="font-size: 12pt; line-height: 107%; font-family: Arial, sans-serif;" class="">, a low-cost intelligent system designed to
+control water use in orchards and vineyards. The system combines hardware and
+software built with low-cost approaches and aims to enable machine learning for
+real-time automated data analysis and irrigation control.</span></p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-md pt-stack-sm">
+
+
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Core Research Pillars -->
+<section class="py-stack-xl bg-surface-container-lowest rounded-xl p-stack-lg border border-outline-variant shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 organic-circuit-pattern -rotate-12 translate-x-1/2 -translate-y-1/2"></div>
+<div class="relative z-10 space-y-stack-lg">
+<div class="text-center space-y-2">
+<h2 class="font-headline-lg text-headline-lg text-primary">Core Research Pillars</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">The project is built upon three fundamental technological and scientific domains.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg">
+<!-- Pillar 1 -->
+<div class="flex flex-col p-stack-md border-r-0 md:border-r border-outline-variant last:border-0 group">
+<div class="w-12 h-12 bg-primary text-on-primary rounded flex items-center justify-center mb-stack-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">nature</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Plant Water Requirements</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed"></p><p class="MsoNormal"><span lang="EN-US" style="font-size: 12pt; line-height: 107%; font-family: Arial, sans-serif;" class="">Inferring
+plant water requirements via the estimation of tree transpiration based on
+field data.<o:p></o:p></span></p><p></p>
+</div>
+<!-- Pillar 2 -->
+<div class="flex flex-col p-stack-md border-r-0 md:border-r border-outline-variant last:border-0 group">
+<div class="w-12 h-12 bg-primary text-on-primary rounded flex items-center justify-center mb-stack-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">sensors</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2" style="color: rgb(62, 92, 27);">Low-cost Sensors</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed"></p><p class="MsoNormal"><span lang="EN-US" style="font-size: 12pt; line-height: 107%; font-family: Arial, sans-serif;" class="">Democratizing
+high-tech agriculture with affordable and accurate IoT hardware solutions.<o:p></o:p></span></p><p></p>
+</div>
+<!-- Pillar 3 -->
+<div class="flex flex-col p-stack-md group">
+<div class="w-12 h-12 bg-primary text-on-primary rounded flex items-center justify-center mb-stack-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">database</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-tertiary mb-2">Data-driven Irrigation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed"><span lang="EN-US" style="font-size: 12pt; line-height: 107%; font-family: Arial, sans-serif;" class="">Sensor data analysis using data mining techniques
+within a knowledge discovery framework.</span></p>
+</div>
+</div>
+</div>
+</section>
+<!-- Organizations Involved -->
+<section class="py-stack-xl space-y-stack-lg">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant text-center tracking-widest uppercase" style="font-size: 1.7em;">Organizations INVOLVED</h2>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-stack-xl items-center">
+<a class="flex justify-center" href="https://www.fct.pt/">
+<img alt="FCT" class="max-h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiYwxL1JwwlkwB5sK3nx1F-wqGIPoL1bZ4NO7ggkryhv2DSZWoOGgIXti7p-lscnpUAKPW6ZoUwligs-59XlIlSFJm37oMxRSAa8rDafJ6Z5PLRuYcA3p4gWxcSIyh-0LtjkKdUP4r5_R3SlHP6eEkHdThfZLRozZN3eIBsv5D0f5sSwhKeTfIyt1g8DdNWm4hQXAS0b6IoRSE-_naX7Gij1LtLJ8QmjacRmhIHpRSbmUIp-OLxCbKhkm3ip1b9eiDKiVt652ZkZVI">
+</a>
+<a class="flex justify-center" href="https://www.isa.ulisboa.pt/">
+<img alt="ISA ULisboa" class="h-[218px] w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNqos4TGjkFRhOpMAA2m2xxNB0bPAsuuxPJf86NndQVqNixwkYOqwUbcpT6cGrLeQJorUwzqLliSUeQIjed9q6QttLLazejzJgpZEMTTlJbRdhC-bGUF19Vj9uOHzyAplkzOP-0lxjFn2gfVRId97nbMEEI9-3AwyXlUzDIbHdo5ULf_j67o7LtFapWIvWC67dkshiYFmueflC2YaqP8LlviSdpLRKVg_Rw_ZtidaI3p6-MRNxV9OnMsXtZ_4owqF8AMrg4V_oWTzm">
+</a>
+<a class="flex justify-center" href="https://www.isa.ulisboa.pt/leaf/info/presentation">
+<img alt="LEAF Research Center" class="max-h-24 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQVxl3p9YYp8VogG0SEUj3Pv6CpA6xNqBVb3jxSWhWR2zezTxPZcfTIImJFo16CXewNn--Wh1NFsR78FX2opWDjJHz-UKLCAO4o1Db3r_ZQsUsXgpfuhXDffcO5QQlPzFOdYw-hbZVkYHn7VN6W06Vrd3aDBdEZizGYBakIHEZBC18uq6jIDUQQV9BSU_kKSJT60_23HHFQ2bmZQE6_ThQRiNY98jSbr3Rl8wBvvP6dUNS72_WoKoXIal3w4HyrMf1-GNzgdAILqsn">
+</a>
+<a class="flex justify-center" href="https://mitportugal.org/">
+<img alt="MIT Portugal" class="max-h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-jXjKuVngAibK3_eWFhgqMRH6Vl4NSYIFh7tWjq3D7fbNimGxpqGT62aaY8LUOj-7kXotuqe-MynPDX5prdfg7oeLaNVs_6ZCv7j2uoFzK-uC_5OhZgIv0dZ630aV4Rwrt3qse3cBfz4odgKdGSn1ZGfIRSkDrBvwARWehpK7OcGDVK8g4iLGHItaqfvhQ0prpUwrX2hMpAGTX2rKIIhig4VSgrQE4ToqLS-XnMzuk4CjgUxBc39GOfH35DfHfssxx3zymIJLcdYD">
+</a>
+<a class="flex justify-center" href="https://www.sfcolab.pt/">
+<img alt="Smart Farm CoLab" class="max-h-16 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMR6jB0D23mGYcwvLuuchmQAnNDEW8qAmAEAcTvvSUgOaSUcRZUhiVWxr9Pt9O06UHBhP_wmhWof4HJJmgGEZGGdLnnwGVhVoGebEUAtZz9Eynz-D6WyMVfTmNh0hX3-p9Bj7kw2pLsexxRElux6tlJTvdLxn9S_d384DKl3wNEIPSzIyf28eDt3rq2TnR-mjA4Mu7tr-IRbkg62Qe63E4NxV2XopHuZruAZ86eHdEcjrlAtL2o1NJQikFhqvh66dnJSoUG80V0cQF" style="max-height: 108px;">
+</a>
+</div>
+</section>
+<!-- Team Section -->
+<section class="py-stack-xl space-y-stack-lg" id="team">
+<div class="flex justify-between items-end border-b border-outline-variant pb-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Research Team</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A multidisciplinary collaboration of experts in agronomy, engineering, and data science.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-stack-lg">
+<!-- Prof. Teresa Paço -->
+<div class="space-y-stack-sm group">
+<div class="aspect-square bg-surface-container-highest rounded-lg overflow-hidden border border-outline-variant transition-all group-hover:border-primary">
+<img alt="Prof. Teresa Paço" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFdxqQecMD8WyUysy8lsQkTd1QDPXL6F9nTW8Xaznww-d_SK4uIIKfiw_bcvx_o7_tM2Uf-Or6kx7UXjrrzQlTckc6xpV2MRQ8U2D59EJFTEZlnQrXvmpIdzyjbweDJG4JXG6jYdAO2tO3y3Ok_gJc0n3i-NiWWD9qEk6MkMdmFmjxV181avoMfYRkDBG_v-yc2Zss_7qhiG7P1yLveMaww8JcelF608TeD1kQiYwBsQBWVnr391R8h6ej1klngQ9JD9iKMFuF_KYy">
+</div>
+<div><h4 class="font-body-md font-bold text-on-surface">Prof. Teresa Paço</h4><p class="font-caption text-caption text-primary">Principal Investigator (PI)</p><a class="font-caption text-caption text-on-surface-variant hover:underline flex items-center gap-1 mt-1" href="mailto:tapaco@isa.ulisboa.pt"><span class="material-symbols-outlined text-xs">mail</span> tapaco@isa.ulisboa.pt</a></div>
+</div>
+<!-- Prof. Amos G. Winter -->
+<div class="space-y-stack-sm group">
+<div class="aspect-square bg-surface-container-highest rounded-lg overflow-hidden border border-outline-variant transition-all group-hover:border-primary">
+<img alt="Prof. Amos G. Winter" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFdxqQecMD8WyUysy8lsQkTd1QDPXL6F9nTW8Xaznww-d_SK4uIIKfiw_bcvx_o7_tM2Uf-Or6kx7UXjrrzQlTckc6xpV2MRQ8U2D59EJFTEZlnQrXvmpIdzyjbweDJG4JXG6jYdAO2tO3y3Ok_gJc0n3i-NiWWD9qEk6MkMdmFmjxV181avoMfYRkDBG_v-yc2Zss_7qhiG7P1yLveMaww8JcelF608TeD1kQiYwBsQBWVnr391R8h6ej1klngQ9JD9iKMFuF_KYy">
+</div>
+<div><h4 class="font-body-md font-bold text-on-surface">Prof. Amos G. Winter</h4><p class="font-caption text-caption text-on-surface-variant">Co-PI</p><p class="font-caption text-caption text-on-surface-variant mt-1">Specializing in...</p><a class="font-caption text-caption text-on-surface-variant hover:underline flex items-center gap-1 mt-1" href="mailto:awinter@mit.edu"><span class="material-symbols-outlined text-xs">mail</span> awinter@mit.edu</a></div>
+</div>
+<!-- Prof. Susan Amrose -->
+<div class="space-y-stack-sm group">
+<div class="aspect-square bg-surface-container-highest rounded-lg overflow-hidden border border-outline-variant transition-all group-hover:border-primary">
+<img alt="Prof. Susan Amrose" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFdxqQecMD8WyUysy8lsQkTd1QDPXL6F9nTW8Xaznww-d_SK4uIIKfiw_bcvx_o7_tM2Uf-Or6kx7UXjrrzQlTckc6xpV2MRQ8U2D59EJFTEZlnQrXvmpIdzyjbweDJG4JXG6jYdAO2tO3y3Ok_gJc0n3i-NiWWD9qEk6MkMdmFmjxV181avoMfYRkDBG_v-yc2Zss_7qhiG7P1yLveMaww8JcelF608TeD1kQiYwBsQBWVnr391R8h6ej1klngQ9JD9iKMFuF_KYy">
+</div>
+<div><h4 class="font-body-md font-bold text-on-surface">Prof. Susan Amrose</h4><p class="font-caption text-caption text-on-surface-variant">Researcher</p><p class="font-caption text-caption text-on-surface-variant mt-1">Specializing in...</p><a class="font-caption text-caption text-on-surface-variant hover:underline flex items-center gap-1 mt-1" href="mailto:samrose@mit.edu"><span class="material-symbols-outlined text-xs">mail</span> samrose@mit.edu</a></div>
+</div>
+<!-- Prof. João Rolim -->
+<div class="space-y-stack-sm group">
+<div class="aspect-square bg-surface-container-highest rounded-lg overflow-hidden border border-outline-variant transition-all group-hover:border-primary">
+<img alt="Prof. João Rolim" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFdxqQecMD8WyUysy8lsQkTd1QDPXL6F9nTW8Xaznww-d_SK4uIIKfiw_bcvx_o7_tM2Uf-Or6kx7UXjrrzQlTckc6xpV2MRQ8U2D59EJFTEZlnQrXvmpIdzyjbweDJG4JXG6jYdAO2tO3y3Ok_gJc0n3i-NiWWD9qEk6MkMdmFmjxV181avoMfYRkDBG_v-yc2Zss_7qhiG7P1yLveMaww8JcelF608TeD1kQiYwBsQBWVnr391R8h6ej1klngQ9JD9iKMFuF_KYy">
+</div>
+<div><h4 class="font-body-md font-bold text-on-surface">Prof. João Rolim</h4><p class="font-caption text-caption text-on-surface-variant">Researcher</p><p class="font-caption text-caption text-on-surface-variant mt-1">Specializing in...</p><a class="font-caption text-caption text-on-surface-variant hover:underline flex items-center gap-1 mt-1" href="mailto:joaorolim@isa.ulisboa.pt"><span class="material-symbols-outlined text-xs">mail</span> joaorolim@isa.ulisboa.pt</a></div>
+</div>
+<!-- Eng. Carlos Lemonde -->
+<div class="space-y-stack-sm group">
+<div class="aspect-square bg-surface-container-highest rounded-lg overflow-hidden border border-outline-variant transition-all group-hover:border-primary">
+<img alt="Eng. Carlos Lemonde" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFdxqQecMD8WyUysy8lsQkTd1QDPXL6F9nTW8Xaznww-d_SK4uIIKfiw_bcvx_o7_tM2Uf-Or6kx7UXjrrzQlTckc6xpV2MRQ8U2D59EJFTEZlnQrXvmpIdzyjbweDJG4JXG6jYdAO2tO3y3Ok_gJc0n3i-NiWWD9qEk6MkMdmFmjxV181avoMfYRkDBG_v-yc2Zss_7qhiG7P1yLveMaww8JcelF608TeD1kQiYwBsQBWVnr391R8h6ej1klngQ9JD9iKMFuF_KYy">
+</div>
+<div><h4 class="font-body-md font-bold text-on-surface">Eng. Carlos Lemonde</h4><p class="font-caption text-caption text-on-surface-variant">Researcher</p><p class="font-caption text-caption text-on-surface-variant mt-1">Specializing in...</p><a class="font-caption text-caption text-on-surface-variant hover:underline flex items-center gap-1 mt-1" href="mailto:carloslemonde@isa.ulisboa.pt"><span class="material-symbols-outlined text-xs">mail</span> carloslemonde@isa.ulisboa.pt</a></div>
+</div>
+<!-- Dr. Jucilene Siqueira -->
+<div class="space-y-stack-sm group">
+<div class="aspect-square bg-surface-container-highest rounded-lg overflow-hidden border border-outline-variant transition-all group-hover:border-primary">
+<img alt="Dr. Jucilene Siqueira" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFdxqQecMD8WyUysy8lsQkTd1QDPXL6F9nTW8Xaznww-d_SK4uIIKfiw_bcvx_o7_tM2Uf-Or6kx7UXjrrzQlTckc6xpV2MRQ8U2D59EJFTEZlnQrXvmpIdzyjbweDJG4JXG6jYdAO2tO3y3Ok_gJc0n3i-NiWWD9qEk6MkMdmFmjxV181avoMfYRkDBG_v-yc2Zss_7qhiG7P1yLveMaww8JcelF608TeD1kQiYwBsQBWVnr391R8h6ej1klngQ9JD9iKMFuF_KYy">
+</div>
+<div><h4 class="font-body-md font-bold text-on-surface">Dr. Jucilene Siqueira</h4><p class="font-caption text-caption text-on-surface-variant">Researcher</p><p class="font-caption text-caption text-on-surface-variant mt-1">Specializing in...</p><a class="font-caption text-caption text-on-surface-variant hover:underline flex items-center gap-1 mt-1" href="mailto:jucilene.siqueira@sfcolab.org"><span class="material-symbols-outlined text-xs">mail</span> jucilene.siqueira@sfcolab.org</a></div>
+</div>
+<!-- Dr. Lívia Pian -->
+<div class="space-y-stack-sm group">
+<div class="aspect-square bg-surface-container-highest rounded-lg overflow-hidden border border-outline-variant transition-all group-hover:border-primary">
+<img alt="Dr. Lívia Pian" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFdxqQecMD8WyUysy8lsQkTd1QDPXL6F9nTW8Xaznww-d_SK4uIIKfiw_bcvx_o7_tM2Uf-Or6kx7UXjrrzQlTckc6xpV2MRQ8U2D59EJFTEZlnQrXvmpIdzyjbweDJG4JXG6jYdAO2tO3y3Ok_gJc0n3i-NiWWD9qEk6MkMdmFmjxV181avoMfYRkDBG_v-yc2Zss_7qhiG7P1yLveMaww8JcelF608TeD1kQiYwBsQBWVnr391R8h6ej1klngQ9JD9iKMFuF_KYy">
+</div>
+<div><h4 class="font-body-md font-bold text-on-surface">Dr. Lívia Pian</h4><p class="font-caption text-caption text-on-surface-variant">Researcher</p><p class="font-caption text-caption text-on-surface-variant mt-1">Specializing in...</p><a class="font-caption text-caption text-on-surface-variant hover:underline flex items-center gap-1 mt-1" href="mailto:livia.pian@sfcolab.org"><span class="material-symbols-outlined text-xs">mail</span> livia.pian@sfcolab.org</a></div>
+</div>
+<!-- Eng. Raúl Estevinha -->
+<div class="space-y-stack-sm group">
+<div class="aspect-square bg-surface-container-highest rounded-lg overflow-hidden border border-outline-variant transition-all group-hover:border-primary">
+<img alt="Eng. Raúl Estevinha" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFdxqQecMD8WyUysy8lsQkTd1QDPXL6F9nTW8Xaznww-d_SK4uIIKfiw_bcvx_o7_tM2Uf-Or6kx7UXjrrzQlTckc6xpV2MRQ8U2D59EJFTEZlnQrXvmpIdzyjbweDJG4JXG6jYdAO2tO3y3Ok_gJc0n3i-NiWWD9qEk6MkMdmFmjxV181avoMfYRkDBG_v-yc2Zss_7qhiG7P1yLveMaww8JcelF608TeD1kQiYwBsQBWVnr391R8h6ej1klngQ9JD9iKMFuF_KYy">
+</div>
+<div><h4 class="font-body-md font-bold text-on-surface">Eng. Raúl Estevinha</h4><p class="font-caption text-caption text-on-surface-variant">Researcher</p><p class="font-caption text-caption text-on-surface-variant mt-1">Specializing in...</p><a class="font-caption text-caption text-on-surface-variant hover:underline flex items-center gap-1 mt-1" href="mailto:raul.estevinha@sfcolab.org"><span class="material-symbols-outlined text-xs">mail</span> raul.estevinha@sfcolab.org</a></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-stack-xl bg-surface-container dark:bg-surface-container-high border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-gutter max-w-container-max mx-auto text-center md:text-left gap-stack-md opacity-90 hover:opacity-100 transition-opacity">
+<div class="space-y-2">
+
+<p class="font-caption text-caption text-on-surface dark:text-on-surface-variant">© 2025 APICC - All rights reserved.</p>
+</div>
+<div class="flex flex-col md:items-end gap-2">
+<a class="font-caption text-caption text-primary dark:text-primary-fixed-dim underline" href="mailto:tapaco@isa.ulisboa.pt">Contact: tapaco@isa.ulisboa.pt</a>
+
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for Progress Bar on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('w-[60%]');
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const progressBar = document.querySelector('.bg-primary.h-full');
+            if (progressBar) {
+                progressBar.style.width = '0%';
+                observer.observe(progressBar);
+            }
+        });
+
+        // Simple Mobile Menu Toggle Simulation
+        const menuIcon = document.querySelector('.material-symbols-outlined');
+        if (menuIcon && menuIcon.textContent === 'menu') {
+            menuIcon.addEventListener('click', () => {
+                alert('Navigation menu would appear here on a live implementation.');
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
