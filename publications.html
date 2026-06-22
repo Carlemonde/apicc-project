@@ -1,0 +1,286 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Publications | APICC Research Project</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Shared Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#aed283",
+                    "inverse-surface": "#2e3132",
+                    "on-primary-fixed-variant": "#324f0e",
+                    "on-primary-fixed": "#0f2000",
+                    "outline-variant": "#c4c8b8",
+                    "on-primary-container": "#afd384",
+                    "primary": "#284404",
+                    "on-background": "#191c1d",
+                    "surface-dim": "#d9dadb",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#005381",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#2c4400",
+                    "surface-container-high": "#e7e8e9",
+                    "primary-container": "#3e5c1b",
+                    "surface-container-low": "#f3f4f5",
+                    "tertiary-container": "#3e5d00",
+                    "inverse-primary": "#aed283",
+                    "secondary-fixed-dim": "#95ccff",
+                    "surface-tint": "#486725",
+                    "surface-container-highest": "#e1e3e4",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#89c7ff",
+                    "on-secondary-fixed": "#001d32",
+                    "secondary": "#166395",
+                    "outline": "#74796b",
+                    "on-tertiary-container": "#a1da43",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#121f00",
+                    "on-tertiary-fixed-variant": "#344e00",
+                    "on-surface-variant": "#44483c",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#edeeef",
+                    "background": "#f8f9fa",
+                    "inverse-on-surface": "#f0f1f2",
+                    "secondary-fixed": "#cde5ff",
+                    "tertiary-fixed": "#baf55b",
+                    "surface-variant": "#e1e3e4",
+                    "on-surface": "#191c1d",
+                    "surface": "#f8f9fa",
+                    "primary-fixed": "#c9ef9c",
+                    "on-secondary-fixed-variant": "#004a75",
+                    "tertiary-fixed-dim": "#9fd840",
+                    "surface-bright": "#f8f9fa",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "stack-md": "16px",
+                    "margin-mobile": "20px",
+                    "stack-lg": "32px",
+                    "stack-xl": "64px",
+                    "stack-sm": "8px",
+                    "margin-desktop": "64px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "headline-display": ["Hanken Grotesk"],
+                    "label-caps": ["JetBrains Mono"],
+                    "caption": ["Work Sans"],
+                    "body-md": ["Work Sans"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Work Sans"]
+            },
+            "fontSize": {
+                    "headline-display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "caption": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .publication-card {
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+      .publication-card:hover {
+        border-color: #166395; /* secondary_color_hex */
+      }
+      .circuit-pattern {
+        background-color: transparent;
+        background-image:  radial-gradient(#c4c8b8 0.5px, transparent 0.5px), radial-gradient(#c4c8b8 0.5px, #f8f9fa 0.5px);
+        background-size: 20px 20px;
+        background-position: 0 0,10px 10px;
+        opacity: 0.1;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed-dim selection:text-primary">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto w-full">
+<div class="font-headline-md text-headline-md font-bold text-primary" href="index.html">APICC</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="project.html">Project</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="timeline.html">Timeline</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 font-bold" href="publications.html">Publications</a>
+</nav>
+</div>
+</header>
+<main class="pt-32 pb-stack-xl">
+<!-- Hero Section / Title -->
+<div class="relative overflow-hidden bg-surface-container-low border-b border-outline-variant">
+<div class="absolute inset-0 circuit-pattern"></div>
+<div class="max-w-container-max mx-auto px-gutter py-stack-lg relative z-10">
+<div class="max-w-3xl">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-4 block">Knowledge Dissemination</span>
+<h1 class="font-headline-display text-headline-display text-on-surface mb-6">Publications</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        The APICC research project (Adapting Precision Irrigation to Climate Change) contributes to the global scientific community in the fields of precision agriculture, low-cost sensors and crop water requirements.</p>
+</div>
+</div>
+</div>
+<!-- Content Area -->
+<div class="max-w-container-max mx-auto px-gutter mt-stack-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Main Publication List (8 Columns) -->
+<div class="md:col-span-8 space-y-stack-md">
+<!-- Publication 1 -->
+<article class="publication-card bg-surface-container-lowest border border-outline-variant p-8 rounded-lg flex flex-col gap-4" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+<div class="flex items-start justify-between">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 font-label-caps text-label-caps rounded">2026</span>
+<span class="material-symbols-outlined text-outline" data-icon="article">article</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-snug">
+                            Water Redistribution Quantified Using Precision Weighting Lysimeters in Olive Split-Root Systems
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Paço, T. A., Rolim, J., Santos, F., &amp; Ferreira, M. I. (2026). <span class="italic">Water</span>, 18(5), 535.
+                        </p>
+<div class="pt-4 border-t border-outline-variant flex gap-4">
+
+<button class="text-secondary font-label-caps text-label-caps flex items-center gap-2 hover:underline">
+<span class="material-symbols-outlined text-[18px]" data-icon="link">link</span> VIEW AT PUBLISHER
+                            </button>
+</div>
+</article>
+<!-- Publication 2 -->
+<article class="publication-card bg-surface-container-lowest border border-outline-variant p-8 rounded-lg flex flex-col gap-4" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+<div class="flex items-start justify-between">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 font-label-caps text-label-caps rounded">2025</span>
+<span class="material-symbols-outlined text-outline" data-icon="pending">pending</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-snug">
+                            Sap flow low-cost sensors integrated in machine learning and collaborative IoT ecosystems for the smart irrigation of olive, testing and calibration with gravimetric data
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Paço, T. A., Pian, L., Estevinha, R., Rolim, J., &amp; Siqueira, J. (2025). <span class="text-secondary font-semibold">(in press)</span>.
+                        </p>
+</article>
+<!-- Publication 3 -->
+<article class="publication-card bg-surface-container-lowest border border-outline-variant p-8 rounded-lg flex flex-col gap-4" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+<div class="flex items-start justify-between">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 font-label-caps text-label-caps rounded">2025</span>
+<span class="material-symbols-outlined text-outline" data-icon="article">article</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-snug">
+                            Water productivity in olive trees: Current advances and new perspectives
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Fernandes-Silva, A. A., Ben-Gal, A., Fernandes, R. D. M., Gucci, R., Imrak, B., Andima, D. K., ... &amp; Garcia-Tejera, O. (2025). <span class="italic">Agricultural Water Management</span>, 322, 109988.
+                        </p>
+<div class="pt-4 border-t border-outline-variant">
+<button class="text-secondary font-label-caps text-label-caps flex items-center gap-2 hover:underline">
+<span class="material-symbols-outlined text-[18px]" data-icon="open_in_new">open_in_new</span> DOI: 10.1016/j.agwat.2024.109988
+                            </button>
+</div>
+</article>
+<!-- Publication 4 -->
+<article class="publication-card bg-surface-container-lowest border border-outline-variant p-8 rounded-lg flex flex-col gap-4" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+<div class="flex items-start justify-between">
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 font-label-caps text-label-caps rounded">2020</span>
+<span class="material-symbols-outlined text-outline" data-icon="history_edu">history_edu</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-snug">
+                            Biot-Granier sensor: a novel strategy to measuring sap flow in trees
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            M. Siqueira, J., A. Paço, T., Machado da Silva, J., &amp; C. Silvestre, J. (2020). <span class="italic">Sensors</span>, 20(12), 3538.
+                        </p>
+</article>
+<!-- Publication 5 -->
+<article class="publication-card bg-surface-container-lowest border border-outline-variant p-8 rounded-lg flex flex-col gap-4" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+<div class="flex items-start justify-between">
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 font-label-caps text-label-caps rounded">2014</span>
+<span class="material-symbols-outlined text-outline" data-icon="history_edu">history_edu</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-snug">
+                            Generating fuzzy rules by learning from olive tree transpiration measurement–An algorithm to automatize Granier sap flow data analysis
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Siqueira, J. M., Paço, T. A. D., Silvestre, J. C., Santos, F. L., Falcão, A. O., &amp; Pereira, L. S. (2014). <span class="italic">Computers and electronics in agriculture</span>, 101, 1-10.
+                        </p>
+</article>
+</div>
+<!-- Sidebar (4 Columns) -->
+<aside class="md:col-span-4 space-y-stack-lg">
+<!-- Research Focus Card -->
+
+<!-- Statistics Card -->
+<div class="bg-primary text-on-primary p-8 rounded-lg overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4 opacity-20">
+<span class="material-symbols-outlined text-[80px]" data-icon="trending_up">trending_up</span>
+</div>
+<div class="relative z-10">
+<p class="font-label-caps text-label-caps uppercase opacity-80 mb-2">Impact Factor</p>
+<h4 class="font-headline-display text-headline-display mb-2">12+</h4>
+<p class="font-body-md">Peer-reviewed publications in Q1 journals.</p>
+</div>
+</div>
+<!-- Image Showcase -->
+
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-stack-xl border-t border-outline-variant bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-gutter py-stack-lg flex flex-col md:flex-row justify-between items-center gap-4">
+
+<p class="font-caption text-caption text-on-surface-variant text-center md:text-left">
+                © 2025 APICC All rights reserved.
+            </p>
+<div class="flex gap-6">
+
+
+
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Smooth appearance of cards on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.publication-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(card);
+            });
+        });
+    </script>
+
+
+</body></html>
