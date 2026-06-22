@@ -1,0 +1,334 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Timeline - APICC Research Project</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#74796b",
+                    "primary-fixed-dim": "#aed283",
+                    "inverse-primary": "#aed283",
+                    "background": "#f8f9fa",
+                    "surface-dim": "#d9dadb",
+                    "tertiary-container": "#3e5d00",
+                    "on-surface": "#191c1d",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#89c7ff",
+                    "on-secondary-fixed": "#001d32",
+                    "secondary": "#166395",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#121f00",
+                    "on-primary-fixed-variant": "#324f0e",
+                    "surface-container": "#edeeef",
+                    "surface-tint": "#486725",
+                    "secondary-fixed": "#cde5ff",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-low": "#f3f4f5",
+                    "surface-container-high": "#e7e8e9",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#44483c",
+                    "surface-bright": "#f8f9fa",
+                    "on-tertiary-fixed-variant": "#344e00",
+                    "on-primary-container": "#afd384",
+                    "primary-fixed": "#c9ef9c",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-background": "#191c1d",
+                    "outline-variant": "#c4c8b8",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "on-secondary-fixed-variant": "#004a75",
+                    "surface": "#f8f9fa",
+                    "on-primary-fixed": "#0f2000",
+                    "error": "#ba1a1a",
+                    "primary": "#284404",
+                    "tertiary-fixed-dim": "#9fd840",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#005381",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#baf55b",
+                    "tertiary": "#2c4400",
+                    "primary-container": "#3e5c1b",
+                    "secondary-fixed-dim": "#95ccff",
+                    "on-tertiary-container": "#a1da43",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-lg": "32px",
+                    "stack-sm": "8px",
+                    "container-max": "1200px",
+                    "stack-md": "16px",
+                    "margin-desktop": "64px",
+                    "stack-xl": "64px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Work Sans"],
+                    "body-md": ["Work Sans"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-display": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "caption": ["Work Sans"],
+                    "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "caption": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .circuit-bg {
+            background-image: radial-gradient(#486725 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar from COMPONENTS_15 -->
+<header class="w-full top-0 sticky bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline z-50">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim" href="index.html">APICC</div>
+<nav class="hidden md:flex gap-stack-lg">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="index.html">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="project.html">Project</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-bold" href="#">Timeline</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="publications.html">Publications</a>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="py-stack-xl px-gutter max-w-container-max mx-auto text-center relative overflow-hidden">
+<div class="absolute inset-0 circuit-bg pointer-events-none"></div>
+<div class="relative z-10">
+<h1 class="font-headline-display text-headline-display text-primary mb-stack-sm">Project Timeline</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">&nbsp;12-month journey roadmap of the APICC project, tracking milestones from initiation to final delivery.
+                </p>
+</div>
+</section>
+<!-- Vertical Timeline Section -->
+<section class="py-stack-xl px-gutter max-w-container-max mx-auto">
+<div class="relative max-w-3xl mx-auto pl-10 md:pl-0">
+<!-- Center Line -->
+<div class="absolute left-5 md:left-1/2 md:-ml-[1px] top-0 bottom-0 w-[2px] bg-outline-variant"></div>
+<div class="space-y-stack-xl relative">
+<!-- 1. September 2025: Project kick-off -->
+<div class="relative flex items-center md:justify-center">
+<div class="absolute left-[-26px] md:left-1/2 md:-ml-3 w-6 h-6 bg-primary rotate-45 border-4 border-surface shadow-sm z-10"></div>
+<div class="md:w-1/2 md:pr-12 md:text-right">
+<span class="font-label-caps text-label-caps text-primary block mb-1">SEPTEMBER 2025</span>
+<h3 class="font-headline-md text-headline-md text-primary">Project Kick-off</h3>
+<p class="text-on-surface-variant font-body-md">Coordination among participating entities.</p>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+</div>
+<!-- 2. Sep 2025 - June 2026: Task 1 -->
+<div class="relative flex items-center md:justify-center">
+<div class="absolute left-[-26px] md:left-1/2 md:-ml-3 w-6 h-6 bg-primary-container rounded-full border-4 border-surface shadow-sm z-10 flex items-center justify-center">
+<span class="text-[10px] text-on-primary-container font-bold">1</span>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+<div class="md:w-1/2 md:pl-12">
+<div class="bg-surface-container-low p-stack-md border border-outline-variant rounded-lg hover:shadow-md transition-shadow">
+<span class="font-label-caps text-label-caps text-secondary block mb-1">SEP 2025 — JUN 2026</span>
+<h3 class="font-headline-md text-headline-md mb-2">Task 1: Sensor Optimization</h3>
+<div class="flex items-center gap-2 mb-2">
+<span class="h-1 w-12 bg-primary-container rounded-full"></span>
+<span class="text-[10px] font-label-caps text-outline uppercase">10 Months Duration</span>
+</div>
+<p class="text-on-surface-variant font-body-md">Diagnosis, optimizing and calibration of sensors for field resilience in changing climates.</p>
+</div>
+</div>
+</div>
+<!-- 3. 18 - 23 January 2026: [Event] Symposium -->
+<div class="relative flex items-center md:justify-center">
+<div class="absolute left-[-26px] md:left-1/2 md:-ml-3 w-6 h-6 bg-secondary rounded-full border-4 border-surface shadow-sm z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-on-secondary">event</span>
+</div>
+<div class="md:w-1/2 md:pr-12 md:text-right">
+<div class="p-stack-sm border-r-2 border-secondary mr-2 md:mr-0">
+<span class="font-label-caps text-[10px] text-secondary block mb-1">18 - 23 JANUARY 2026</span>
+<h4 class="font-body-md font-bold text-on-surface">XI International Symposium on Irrigation of Horticultural Crops</h4>
+<p class="text-caption text-on-surface-variant">Tatura SmartFarm, Victoria, Australia</p>
+</div>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+</div>
+<!-- 4. Nov 2025 - Oct 2026: Task 2 -->
+<div class="relative flex items-center md:justify-center">
+<div class="absolute left-[-26px] md:left-1/2 md:-ml-3 w-6 h-6 bg-secondary-container rounded-full border-4 border-surface shadow-sm z-10 flex items-center justify-center">
+<span class="text-[10px] text-on-secondary-container font-bold">2</span>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+<div class="md:w-1/2 md:pl-12">
+<div class="bg-surface-container-low p-stack-md border border-outline-variant rounded-lg hover:shadow-md transition-shadow">
+<span class="font-label-caps text-label-caps text-secondary block mb-1">NOV 2025 — OCT 2026</span>
+<h3 class="font-headline-md text-headline-md mb-2">Task 2: Big Data Analysis</h3>
+<div class="flex items-center gap-2 mb-2">
+<span class="h-1 w-12 bg-secondary-container rounded-full"></span>
+<span class="text-[10px] font-label-caps text-outline uppercase">12 Months Duration</span>
+</div>
+<p class="text-on-surface-variant font-body-md">Big Data acquisition, processing and analysis using advanced IoT architectures.</p>
+</div>
+</div>
+</div>
+<!-- 5. 14 - 21 July 2026: [Event] MIT -->
+<div class="relative flex items-center md:justify-center">
+<div class="absolute left-[-26px] md:left-1/2 md:-ml-3 w-6 h-6 bg-secondary rounded-full border-4 border-surface shadow-sm z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-on-secondary">handshake</span>
+</div>
+<div class="md:w-1/2 md:pr-12 md:text-right">
+<div class="p-stack-sm border-r-2 border-secondary mr-2 md:mr-0">
+<span class="font-label-caps text-[10px] text-secondary block mb-1">14 - 21 JULY 2026</span>
+<h4 class="font-body-md font-bold text-on-surface">MIT Inter-institutional collaboration</h4>
+<p class="text-caption text-on-surface-variant">Boston, USA</p>
+</div>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+</div>
+<!-- 6. 16 - 18 July 2026: [Event] DATA Conference -->
+<div class="relative flex items-center md:justify-center">
+<div class="absolute left-[-26px] md:left-1/2 md:-ml-3 w-6 h-6 bg-secondary rounded-full border-4 border-surface shadow-sm z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-on-secondary">podcasts</span>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+<div class="md:w-1/2 md:pl-12">
+<div class="p-stack-sm border-l-2 border-secondary ml-2 md:ml-0">
+<span class="font-label-caps text-[10px] text-secondary block mb-1">16 - 18 JULY 2026</span>
+<h4 class="font-body-md font-bold text-on-surface">DATA Conference</h4>
+<p class="text-caption text-on-surface-variant">Porto, Portugal</p>
+</div>
+</div>
+</div>
+<!-- 7. Feb 2026 - Oct 2026: Task 3 -->
+<div class="relative flex items-center md:justify-center">
+<div class="absolute left-[-26px] md:left-1/2 md:-ml-3 w-6 h-6 bg-tertiary-container rounded-full border-4 border-surface shadow-sm z-10 flex items-center justify-center">
+<span class="text-[10px] text-on-tertiary-container font-bold">3</span>
+</div>
+<div class="md:w-1/2 md:pr-12 md:text-right">
+<div class="bg-surface-container-low p-stack-md border border-outline-variant rounded-lg hover:shadow-md transition-shadow">
+<span class="font-label-caps text-label-caps text-secondary block mb-1">FEB 2026 — OCT 2026</span>
+<h3 class="font-headline-md text-headline-md mb-2">Task 3: SOFIS System</h3>
+<div class="flex items-center gap-2 mb-2 md:justify-end">
+<span class="text-[10px] font-label-caps text-outline uppercase">9 Months Duration</span>
+<span class="h-1 w-12 bg-tertiary-container rounded-full"></span>
+</div>
+<p class="text-on-surface-variant font-body-md">Advancing SOFIS system integration, ensuring real-time data translates into actionable advice.</p>
+</div>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+</div>
+<!-- 8. Oct 2026 - Oct 2026: Task 4 -->
+<div class="relative flex items-center md:justify-center">
+<div class="absolute left-[-26px] md:left-1/2 md:-ml-3 w-6 h-6 bg-primary-container rounded-full border-4 border-surface shadow-sm z-10 flex items-center justify-center">
+<span class="text-[10px] text-on-primary-container font-bold">4</span>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+<div class="md:w-1/2 md:pl-12">
+<div class="bg-surface-container-low p-stack-md border border-outline-variant rounded-lg hover:shadow-md transition-shadow">
+<span class="font-label-caps text-label-caps text-secondary block mb-1">OCT 2026</span>
+<h3 class="font-headline-md text-headline-md mb-2">Task 4: Communication</h3>
+<div class="flex items-center gap-2 mb-2">
+<span class="h-1 w-12 bg-primary-container rounded-full"></span>
+<span class="text-[10px] font-label-caps text-outline uppercase">Final Dissemination</span>
+</div>
+<p class="text-on-surface-variant font-body-md">Communication and dissemination of the project.</p>
+</div>
+</div>
+</div>
+<!-- 9. 30 Sep - 2 Oct 2026: [Event] Congresso Nacional -->
+<div class="relative flex items-center md:justify-center">
+<div class="absolute left-[-26px] md:left-1/2 md:-ml-3 w-6 h-6 bg-secondary rounded-full border-4 border-surface shadow-sm z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-on-secondary">groups</span>
+</div>
+<div class="md:w-1/2 md:pr-12 md:text-right">
+<div class="p-stack-sm border-r-2 border-secondary mr-2 md:mr-0">
+<span class="font-label-caps text-[10px] text-secondary block mb-1">30 SEP - 02 OCT 2026</span>
+<h4 class="font-body-md font-bold text-on-surface">XI Congresso Nacional de Rega e Drenagem</h4>
+<p class="text-caption text-on-surface-variant">Beja, Portugal</p>
+</div>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+</div>
+<!-- 10. October 2026: Final Report -->
+<div class="relative flex items-center md:justify-center">
+<div class="absolute left-[-26px] md:left-1/2 md:-ml-3 w-6 h-6 bg-primary rotate-45 border-4 border-surface shadow-sm z-10"></div>
+<div class="hidden md:block md:w-1/2"></div>
+<div class="md:w-1/2 md:pl-12">
+<span class="font-label-caps text-label-caps text-primary block mb-1">OCTOBER 2026</span>
+<h3 class="font-headline-md text-headline-md text-primary">Final Report</h3>
+<p class="text-on-surface-variant font-body-md">Project completion, final delivery, and reporting.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contextual Research Card Section -->
+<section class="py-stack-xl px-gutter max-w-container-max mx-auto grid md:grid-cols-2 gap-gutter">
+<div class="p-stack-lg border border-outline-variant rounded-lg bg-surface flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Technical Methodology</h3>
+<p class="text-on-surface-variant font-body-md mb-stack-md">
+                    Our timeline integrates rigorous scientific validation with iterative software development. Task 3 focus specifically on the SOFIS system integration, ensuring real-time data from field sensors translates into actionable irrigation advice.
+                </p>
+
+</div>
+<div class="h-64 md:h-auto rounded-lg overflow-hidden border border-outline-variant bg-surface-container-high relative">
+<div class="absolute inset-0 circuit-bg"></div>
+<div class="relative w-full h-full flex items-center justify-center p-stack-xl">
+<div class="text-center">
+<span class="font-headline-display text-headline-display text-primary block">12</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">MONTHS TOTAL PROJECT DURATION</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer from COMPONENTS_15 -->
+<footer class="w-full mt-stack-xl bg-surface-container dark:bg-surface-container-high border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-gutter max-w-container-max mx-auto text-center md:text-left gap-stack-md">
+<div class="flex flex-col gap-2">
+
+<div class="font-caption text-caption text-on-surface dark:text-on-surface-variant">© 2025 APICC - all rights reserved.</div>
+</div>
+<div class="flex flex-col gap-2">
+
+</div>
+</div>
+</footer>
+
+
+
+
+</body></html>
