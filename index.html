@@ -180,10 +180,10 @@
 <div class="space-y-2 pt-2">
 <div class="flex justify-between items-center">
 <span class="font-label-caps text-label-caps text-on-surface-variant">PROGRESS</span>
-<span class="font-label-caps text-label-caps text-primary">60%</span>
+<span class="font-label-caps text-label-caps text-primary">75%</span>
 </div>
 <div class="w-full bg-surface-dim h-2 rounded-full overflow-hidden">
-<div class="bg-primary h-full w-[60%] transition-all duration-1000 ease-out" style="width: 0%; background-color: rgb(62, 92, 27);"></div>
+<div class="bg-primary h-full w-[75%] transition-all duration-1000 ease-out" style="width: 0%; background-color: rgb(62, 92, 27);"></div>
 </div>
 </div>
 </div>
@@ -455,14 +455,14 @@ within a knowledge discovery framework.</span></p>
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('w-[60%]');
+                        entry.target.classList.add('w-[75%]');
                     }
                 });
             }, { threshold: 0.5 });
 
             const progressBar = document.querySelector('.bg-primary.h-full');
             if (progressBar) {
-                progressBar.style.width = '60%';
+                progressBar.style.width = '75%';
                 observer.observe(progressBar);
             }
         });
